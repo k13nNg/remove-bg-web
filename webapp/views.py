@@ -7,5 +7,5 @@ from django.http import HttpResponse
 
 # view functions are also called request handler
 
-def hello(request):
-    return render(request, 'hello.html')
+def upload_image_render(request):
+    return render(request, 'upload_image.html')
