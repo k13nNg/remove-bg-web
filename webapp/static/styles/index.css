@@ -5,40 +5,119 @@
          url('../static/fonts/actor.ttf') format("truetype");
   }
 
-/* Add a black background color to the top navigation */
-.topnav {
-    background-color: #BDC4C8;
-    overflow: hidden;
+/* Navbar */
+
+*{
+  margin:0;
+  padding:0;
 }
 
-#logo{
-    max-width: 35%;
-    max-height: 35%;
+.nav-links a{
+  color:#fff;
 }
 
-/* Style the links inside the navigation bar */
-
-.topnav a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
+a{
   text-decoration: none;
-  font-size: 17px;
+}
+
+li{
+  list-style: none;
+}
+
+.navbar{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #BDC4C8;
+}
+
+.nav-links a{
+  color:black;
   font-weight:bold;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+#logo{
+  max-width:50%;
+  max-height:50%;
+  position:relative;
 }
 
-/* Right-aligned section inside the top navigation */
-.topnav-right {
-  float: right;
+.logo{
+  max-width:50%;
+  max-height:50%;
 }
 
+.menu{
+  display:flex;
+  gap:20 em;
+  font-size: 30px;
+}
+
+.menu li{
+  padding: 5px 14px;
+}
+
+.dropdown li{
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+
+/* Responsive Navbar */
+input[type=checkbox]{
+  display: none;
+}
+
+.hamburger{
+  display:none;
+  font-size:24px;
+  user-select:none;
+}
+
+/* Commands when the width of the screen is 810px or less */
+@media(max-width: 810px){
+  .menu{
+    display:none;
+    position:absolute;
+    background-color:#BDC4C8;
+    top:13vh;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+.menu li:hover{
+  display: inline-block;
+  background-color: #c7d6ed;
+  transition: 0.3s ease;
+}
+
+.menu li + li {
+  margin-top: 12px;
+}
+
+input[type=checkbox]:checked~.menu{
+  display:block;
+}
+
+.hamburger{
+  display:block;
+}
+
+.dropdown{
+  left:50%;
+  top:30px;
+  transform: translateX(35%);
+}
+
+.dropdown li:hover{
+  background-color:  #4c9e9e;
+}
+}
+
+/* Navbar Ends */
 #main{
     display:flex;
     flex-direction:column;
