@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+
+* {
+    font-family: 'Actor', sans-serif;
+    text-align: center;
+}
+
+.image-holder{
+    height: 400px;
+    width: 400px;
+    background-color: lightgray;
+    margin: auto;
+    padding: auto;
+    background-size: cover;
+    background-position: center;
+}
+
+.button{
+    background-color: lightgray;
+    border: 1px solid;
+    font-size: 25px;
+    padding: 15px 15px;
+    border-radius: 50px;
+}
+
+.button:hover{
+    background-color: white;
+}
+
+.button > img,
+.button > span {
+  vertical-align: middle;
+}
+
+.button > img{
+    height: 30px;
+    width: 30px;
+}
+
+
+/* Mobile devices */
+@media screen and (min-width: 320px) and (max-width: 480px){
+    
+}
+
+/* iPads and Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px){
+    
+}
+
+/* Small screens, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    
+}
+
+/* Desktops and large screens */
+@media screen and (min-width: 1025px) and (max-width: 1200px){
+    
+}

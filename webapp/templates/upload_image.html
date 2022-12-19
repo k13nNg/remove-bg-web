@@ -6,9 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>remove-bg</title>
-    <link rel="shortcut icon" type="image/svg" href="{% static 'logo.svg' %}">
+    <link rel="shortcut icon" type="image/svg" href="{% static '/images/logo.svg' %}">
+    <link rel="stylesheet" href="{% static '/styles/upload_image_style.css'%}">
 </head>
+
 <body>
-    
+    <h1 class="heading">Upload your image</h1>
+    <div class="image-holder" id="display-image"></div>
+    <br>
+
+    <input id="real-file-reader" hidden="hidden" type = "file" accept="image/png, image/jpeg">
+
+    <button id="custom-button" class="button">
+        <img src="{% static '/images/cloud-upload.svg'%}" />  
+        <span>Upload your image</span>
+    </button>
+
 </body>
+
+<script src="{% static '/js/upload_image.js' %}"></script>
 </html>
