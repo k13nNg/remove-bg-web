@@ -5,15 +5,6 @@
     text-align: center;
 }
 
-.image-holder{
-    height: 400px;
-    width: 400px;
-    background-color: lightgray;
-    margin: auto;
-    padding: auto;
-    background-size: cover;
-    background-position: center;
-}
 
 .button{
     background-color: lightgray;
@@ -40,20 +31,28 @@
 
 /* Mobile devices */
 @media screen and (min-width: 320px) and (max-width: 480px){
+    .image-holder{
+        height: 400px;
+        width: 300px;
+        background-color: lightgray;
+        margin: auto;
+        padding: auto;
+        background-size: cover;
+        display: block;
+    }
     
 }
 
 /* iPads and Tablets */
-@media screen and (min-width: 481px) and (max-width: 768px){
-    
-}
-
-/* Small screens, laptops */
-@media screen and (min-width: 769px) and (max-width: 1024px){
-    
-}
-
-/* Desktops and large screens */
-@media screen and (min-width: 1025px) and (max-width: 1200px){
+@media screen and (min-width: 481px) {
+    .image-holder{
+        height: 400px;
+        width: 400px;
+        background-color: lightgray;
+        margin: auto;
+        padding: auto;
+        background-size: cover;
+        display: block;
+    }
     
 }
