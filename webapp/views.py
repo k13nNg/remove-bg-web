@@ -14,3 +14,7 @@ def main_render(request):
 
 def upload_image_render(request):
     return render(request, 'upload_image.html')
+
+
+def about_render(request):
+    return render(request, 'about.html')
