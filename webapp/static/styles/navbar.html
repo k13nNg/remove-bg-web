@@ -1,0 +1,28 @@
+<!--Navigation bar-->
+<nav class="navbar">
+  <div class="logo">
+    <a href="#index"><img src="{% static 'images\logo.svg'%}" id="logo" /></a>
+  </div>
+  <ul class="nav-links">
+    <input type="checkbox" id="checkbox_toggle" />
+    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+    <div class="menu">
+      <li><a href="#About">About</a></li>
+      <li><a href="#login">Log In</a></li>
+      <li><a href="#signup">Sign Up</a></li>
+    </div>
+  </ul>
+</nav>
+
+<script>
+  /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+<!--end of Navigation bar-->

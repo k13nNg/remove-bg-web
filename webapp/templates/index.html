@@ -14,6 +14,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'styles/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}" />
     <link
       href="{% static 'fonts/actor.ttf' %}"
       rel="stylesheet"
@@ -23,38 +24,19 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
+
   <body>
     <!--Navigation bar-->
-    <nav class="navbar">
-      <div class="logo">
-        <a href="#index"
-          ><img src="{% static 'images\logo.svg'%}" id="logo"
-        /></a>
-      </div>
-      <ul class="nav-links">
-        <input type="checkbox" id="checkbox_toggle" />
-        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-        <div class="menu">
-          <li><a href="#About">About</a></li>
-          <li><a href="#login">Log In</a></li>
-          <li><a href="#signup">Sign Up</a></li>
-        </div>
-      </ul>
-    </nav>
-    <!--end of Navigation bar-->
+    <div id="nav-placeholder"></div>
 
     <script>
-      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
+      $(function () {
+        $("#nav-placeholder").load("{% static 'styles\navbar.html'%}");
+      });
     </script>
+    <!--end of Navigation bar-->
 
     <div class="main" id="main">
       <img src="{% static 'images\logo.svg'%}" alt="My image" />
