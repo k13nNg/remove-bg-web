@@ -5,5 +5,5 @@ from . import views
 # URLConf
 urlpatterns = [
     path('upload_image/', views.upload_image_render),
-    path('index/', views.main_render)
+    path('', views.main_render,name='index') #default page
 ]
