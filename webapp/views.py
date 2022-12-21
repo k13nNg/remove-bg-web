@@ -10,6 +10,10 @@ from django.template import loader
 
 
 def main_render(request):
+    return render(request, 'index.html')
+
+
+def navbar_render(request):
     navbar = loader.get_template('navbar.html')
     return HttpResponse(navbar.render())
 

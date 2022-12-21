@@ -1,4 +1,4 @@
-{%load static%}
+{% extends 'navbar.html' %} {%load static%} {% block navbar %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,9 +28,6 @@
   </head>
 
   <body>
-    {% block navbar %} {% endblock %}
-    <!--end of Navigation bar-->
-
     <div class="main" id="main">
       <img src="{% static 'images\logo.svg'%}" alt="My image" />
 
@@ -47,3 +44,5 @@
     </div>
   </body>
 </html>
+
+{% endblock %}
