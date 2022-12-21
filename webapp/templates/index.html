@@ -28,14 +28,7 @@
   </head>
 
   <body>
-    <!--Navigation bar-->
-    <div id="nav-placeholder"></div>
-
-    <script>
-      $(function () {
-        $("#nav-placeholder").load("{% static 'styles\navbar.html'%}");
-      });
-    </script>
+    {% block navbar %} {% endblock %}
     <!--end of Navigation bar-->
 
     <div class="main" id="main">

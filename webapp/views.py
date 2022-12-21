@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 
 # Create your views here.
 # view functions are functions that takes a request and
@@ -9,7 +10,8 @@ from django.http import HttpResponse
 
 
 def main_render(request):
-    return render(request, 'index.html')
+    navbar = loader.get_template('navbar.html')
+    return HttpResponse(navbar.render())
 
 
 def upload_image_render(request):
