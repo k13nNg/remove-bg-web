@@ -1,5 +1,5 @@
+{% extends 'navbar.html' %} {%load static%} {% block navbar %}
 
-{%load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,15 +20,6 @@
   </head>
 
   <body>
-    <!--Navigation bar-->
-    <div id="nav-placeholder"></div>
-
-    <script>
-      $(function () {
-        $("#nav-placeholder").load("{% static 'styles\navbar.html'%}");
-      });
-    </script>
-    <!--end of Navigation bar-->
 
     <h1>About</h1>
 
@@ -60,3 +51,4 @@
     </div>
   </body>
 </html>
+{% endblock %}
