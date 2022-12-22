@@ -6,11 +6,9 @@
 
 <!--Navigation bar-->
 <nav class="navbar">
-  <div class="logo">
-    <a href="{%url 'index' %}">
-      <img src={% static 'styles/logo.svg' %} alt="remove-bg">
-    </a>
-  </div>
+  <a href="{%url 'index' %}">
+    <img class="logo" src={% static 'styles/logo.svg' %} alt="remove-bg">
+  </a>
   <ul class="nav-links">
     <input type="checkbox" id="checkbox_toggle" />
     <label for="checkbox_toggle" class="hamburger">&#9776;</label>
