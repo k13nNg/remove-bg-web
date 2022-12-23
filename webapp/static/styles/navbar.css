@@ -69,8 +69,8 @@
     user-select:none;
   }
   
-  /* Commands when the width of the screen is 861px or less */
-  @media(max-width: 861px){
+  /* Commands when the width of the screen is 700px or less */
+  @media(max-width: 700px){
     .menu{
       display:none;
       position:absolute;
