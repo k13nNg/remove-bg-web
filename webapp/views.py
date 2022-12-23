@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.http import JsonResponse
+
+# import the AI model
+from rembg import remove
+from PIL import Image
 
 # Create your views here.
 # view functions are functions that takes a request and
@@ -24,3 +29,10 @@ def upload_image_render(request):
 
 def about_render(request):
     return render(request, 'about.html')
+
+# def get_remove_bg_image(request):
+#     image_to_process = request.GET.get("img", None)
+#     return remove(image_to_process)
+        
+    
+
