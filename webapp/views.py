@@ -24,7 +24,7 @@ def navbar_render(request):
 
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'signup.html')
 
 
 def upload_image_render(request):
