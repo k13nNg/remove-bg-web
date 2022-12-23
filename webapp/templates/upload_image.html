@@ -8,6 +8,8 @@
     <title>remove-bg</title>
     <link rel="shortcut icon" type="image/svg" href="{% static '/images/logo.svg' %}">
     <link rel="stylesheet" href="{% static '/styles/upload_image_style.css'%}">
+    <script src="{% static '/js/jquery-3.6.3.js' %}"></script>
+    
 </head>
 
 <body>
@@ -23,10 +25,19 @@
         <span>Upload your image</span>
     </button>
 
-    <button id = "convert-button" class="button convert-btn">
-        <img src="{% static 'images/convert.svg'%}" />
-        <span>Convert</span>
-    </button>
+    <div id = "btn-container" class = "after-upload">
+        <button id="chooseAnother-button" class="button upload-btn">
+            <img src="{% static '/images/cloud-upload.svg'%}" />  
+            <span>Choose another image</span>
+        </button>
+
+        <button id = "convert-button" class="button convert-btn">
+            <img src="{% static 'images/convert.svg'%}" />
+            <span>Convert your image</span>
+        </button>
+    </div>
+
+    
 
 </body>
 

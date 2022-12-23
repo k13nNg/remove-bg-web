@@ -14,12 +14,19 @@
 }
 
 .upload-btn{
-    display: none;
-}
-
-.convert-btn{
     display: inline;
 }
+
+.after-upload{
+    display: none;
+    margin: auto;
+}
+
+.after-upload>button{
+    display: inline-block;
+    margin: 10px;
+}
+
 
 .button:hover{
     background-color: white;
