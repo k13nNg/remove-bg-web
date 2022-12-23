@@ -5,13 +5,20 @@
     text-align: center;
 }
 
-
 .button{
     background-color: lightgray;
     border: 1px solid;
     font-size: 25px;
     padding: 15px 15px;
     border-radius: 50px;
+}
+
+.upload-btn{
+    display: none;
+}
+
+.convert-btn{
+    display: inline;
 }
 
 .button:hover{
@@ -31,28 +38,26 @@
 
 /* Mobile devices */
 @media screen and (min-width: 320px) and (max-width: 480px){
-    .image-holder{
+    /* .image-holder{
         height: 400px;
-        width: 300px;
-        background-color: lightgray;
+        width: 400px;
+        background-color: white;
         margin: auto;
         padding: auto;
-        background-size: cover;
-        display: block;
-    }
+        border: 2px solid;
+    } */
     
 }
 
 /* iPads and Tablets */
 @media screen and (min-width: 481px) {
-    .image-holder{
+    /* .image-holder{
         height: 400px;
         width: 400px;
-        background-color: lightgray;
+        background-color: white;
         margin: auto;
         padding: auto;
-        background-size: cover;
-        display: block;
-    }
+        border: 2px solid;
+    } */
     
 }

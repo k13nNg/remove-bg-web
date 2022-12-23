@@ -13,14 +13,19 @@
 <body>
 
     <h1 class="heading">Upload your image</h1>
-    <canvas class="image-holder" id="display-image"></canvas>
+    <div class="image-holder" id="display-image"></div>
     <br>
 
-    <input id="real-file-reader" hidden="hidden" type = "file" accept="image/png, image/jpeg">
+    <input id="input" hidden="hidden" type = "file" accept="image/png, image/jpeg">
 
-    <button id="custom-button" class="button">
+    <button id="upload-button" class="button upload-btn">
         <img src="{% static '/images/cloud-upload.svg'%}" />  
         <span>Upload your image</span>
+    </button>
+
+    <button id = "convert-button" class="button convert-btn">
+        <img src="{% static 'images/convert.svg'%}" />
+        <span>Convert</span>
     </button>
 
 </body>
