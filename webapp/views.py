@@ -4,8 +4,8 @@ from django.template import loader
 from django.http import JsonResponse
 
 # import the AI model
-from rembg import remove
-from PIL import Image
+#from rembg import remove
+#from PIL import Image
 
 # Create your views here.
 # view functions are functions that takes a request and

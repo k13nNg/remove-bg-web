@@ -11,6 +11,7 @@
   
   a{
     text-decoration: none;
+    max-width:167.5px;
   }
   
   li{
@@ -31,8 +32,8 @@
   }
   
   img{
-    max-width:50%;
-    max-height:50%;
+    max-width:99%;
+    max-height:99%;
   }
 
   img:not(.logo){
@@ -68,8 +69,8 @@
     user-select:none;
   }
   
-  /* Commands when the width of the screen is 860px or less */
-  @media(max-width: 860px){
+  /* Commands when the width of the screen is 861px or less */
+  @media(max-width: 861px){
     .menu{
       display:none;
       position:absolute;
