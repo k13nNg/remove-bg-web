@@ -23,6 +23,10 @@ def navbar_render(request):
     return HttpResponse(navbar.render())
 
 
+def login(request):
+    return render(request, 'login.html')
+
+
 def upload_image_render(request):
     return render(request, 'upload_image.html')
 

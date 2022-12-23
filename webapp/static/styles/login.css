@@ -1,0 +1,27 @@
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+input{
+    max-width:80%;
+}
+
+.rectangle{
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 100vh;
+  height: 80vh;  
+  display:flex;
+  align-items: center;
+}
+
+html,
+body {
+  height: 100%
+}

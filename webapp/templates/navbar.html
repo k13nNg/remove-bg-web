@@ -7,14 +7,14 @@
 <!--Navigation bar-->
 <nav class="navbar">
   <a href="{%url 'index' %}">
-    <img class="logo" src={% static 'styles/logo.svg' %} alt="remove-bg">
+    <img class="logo" src={% static 'images/logo.svg' %} alt="remove-bg">
   </a>
   <ul class="nav-links">
     <input type="checkbox" id="checkbox_toggle" />
     <label for="checkbox_toggle" class="hamburger">&#9776;</label>
     <div class="menu">
       <li><a href="{% url 'about' %}">About</a></li>
-      <li><a href="#login">Log In</a></li>
+      <li><a href="{% url 'login' %}">Log In</a></li>
       <li><a href="#signup">Sign Up</a></li>
     </div>
   </ul>
