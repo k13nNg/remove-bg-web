@@ -14,9 +14,14 @@
 
 <body>
 <div class="d-flex flex-row p-2">
-    <a href="{% url 'index' %}">
-        <input type="image" src="{% static 'images/homeButton.svg' %}" action="{% url 'index' %}"/>
-    </a>
+    <div id="homebutton">
+        <a href="{% url 'index' %}">
+            <input type="image" id="home" src="{% static 'images/homeButton.svg' %}" action="{% url 'index' %}"/>
+        </a>
+    </div>
+    <div class="hide">
+        <h2><b>Return to Home</b></h2>
+    </div>
 </div>
 
 <div class="h-100 d-flex align-items-center justify-content-center">

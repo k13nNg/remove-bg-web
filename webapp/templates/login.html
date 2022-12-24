@@ -14,9 +14,14 @@
 
 <body>
 <div class="d-flex flex-row p-2">
-    <a href="{% url 'index' %}">
-        <input type="image" src="{% static 'images/homeButton.svg' %}" action="{% url 'index' %}"/>
-    </a>
+    <div id="homebutton">
+        <a href="{% url 'index' %}">
+            <input type="image" id="home" src="{% static 'images/homeButton.svg' %}" action="{% url 'index' %}"/>
+        </a>
+    </div>
+    <div class="hide">
+        <h2><b>Return to Home</b></h2>
+    </div>
 </div>
 
 <div class="h-100 d-flex align-items-center justify-content-center">
@@ -25,7 +30,8 @@
             <img src="{% static 'images\logo.svg' %}" alt="Logo"/>
             <input type="text" class="enter pill" placeholder="email" id="fname" name="fname">
             <input type="text" class="enter pill" placeholder="password" id="fname" name="fname">
-            <a href="https://r.mtdv.me/remove-bg-web" target="_blank"  rel="noopener noreferrer"> <!-- Note: Implement Backend or MVC Framework as Needed -->
+            <a href="https://r.mtdv.me/remove-bg-web" target="_blank" rel="noopener noreferrer">
+                <!-- Note: Implement Backend or MVC Framework as Needed -->
                 <button class="button pill">Log In</button>
             </a>
         </div>
