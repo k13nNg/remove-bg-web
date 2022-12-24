@@ -2,10 +2,18 @@
     border: 5px solid black;
 }
 
+
 .hide {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+
+.fadebutton:hover + .hide {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
 }
 
 .nextbutton:hover + .hide {
@@ -14,11 +22,7 @@
     transition: opacity 0.5s linear;
 }
 
-.fadebutton:hover + .hide {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.5s linear;
-}
+
 
 .pill {
     color: black;
