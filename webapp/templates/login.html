@@ -14,7 +14,7 @@
 
 <body>
 <div class="d-flex flex-row p-2">
-    <div id="homebutton">
+    <div class="fadebutton">
         <a href="{% url 'index' %}">
             <input type="image" id="home" src="{% static 'images/homeButton.svg' %}" action="{% url 'index' %}"/>
         </a>
@@ -24,7 +24,8 @@
     </div>
 </div>
 
-<div class="h-100 d-flex align-items-center justify-content-center">
+<div class="h-100 d-flex align-self-center justify-content-center">
+    <div style="width: 10vh"></div>
     <div class="rectangle">
         <div class="h-100 d-flex flex-column align-items-center justify-content-center">
             <img src="{% static 'images\logo.svg' %}" alt="Logo"/>
@@ -36,6 +37,24 @@
             </a>
         </div>
     </div>
+    <div style="width: 10vh"></div>
+
+    <div class="d-flex align-items-center justify-content center" style="width: 20vh">
+        <div class="fadebutton">
+            <a href="{% url 'signup' %}">
+                <button class="nextbutton">
+                    <img src="{% static 'images\rightarrow.svg' %}" alt="rightarrow"/>
+                </button>
+            </a>
+        </div>
+        <div class="hide">
+            <div>
+                <h2><b>Go to Signup</b></h2>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
