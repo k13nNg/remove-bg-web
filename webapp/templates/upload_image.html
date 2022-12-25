@@ -15,27 +15,38 @@
 <body>
 
     <h1 class="heading">Upload your image</h1>
-    <div class="image-holder" id="display-image"></div>
+    
+    <div class="image-holder" id="display-image">
+        <!-- <img class= "image_thumbnail" src="{{image.img.url}}" alt="image"> -->
+    </div>
     <br>
 
-    <input id="input" hidden="hidden" type = "file" accept="image/png, image/jpeg">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
 
-    <button id="upload-button" class="button upload-btn">
-        <img src="{% static '/images/cloud-upload.svg'%}" />  
-        <span>Upload your image</span>
-    </button>
-
-    <div id = "btn-container" class = "after-upload">
-        <button id="chooseAnother-button" class="button upload-btn">
+        <input name="image" id="input" hidden="hidden" type = "file" accept="image/png, image/jpeg">
+        
+        <button type="button" id="upload-button" class="button upload-btn">
             <img src="{% static '/images/cloud-upload.svg'%}" />  
-            <span>Choose another image</span>
+            <span>Upload your image</span>
         </button>
+        
 
-        <button id = "convert-button" class="button convert-btn">
-            <img src="{% static 'images/convert.svg'%}" />
-            <span>Convert your image</span>
-        </button>
-    </div>
+        <div id = "btn-container" class = "after-upload">
+            <button type="button" id="chooseAnother-button" class="button upload-btn">
+                <img src="{% static '/images/cloud-upload.svg'%}" />  
+                <span>Choose another image</span>
+            </button>
+            
+            <button type="submit" id = "convert-button" class="button convert-btn">
+                <img src="{% static 'images/convert.svg'%}" />
+                <span>Convert your image</span>
+            </button>
+            
+
+        </div>
+
+    </form>
 
     
 

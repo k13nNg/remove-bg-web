@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from django.http import JsonResponse
+from .models import Upload_Image
 
 # import the AI model
 #from rembg import remove
@@ -28,15 +29,18 @@ def login(request):
 
 
 def upload_image_render(request):
+    if request.method == "POST":
+        data = request.POST
+        image = request.FILES.get('image')
+
+        upload_image = Upload_Image.objects.create(image=image)
+
     return render(request, 'upload_image.html')
 
 
 def about_render(request):
     return render(request, 'about.html')
 
-# def get_remove_bg_image(request):
-#     image_to_process = request.GET.get("img", None)
-#     return remove(image_to_process)
         
     
 

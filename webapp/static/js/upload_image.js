@@ -4,22 +4,6 @@ const chooseAnotherBtn = document.getElementById("chooseAnother-button");
 const convertBtn = document.getElementById("convert-button");
 let input_file = "";
 
-// function removeBackground(input_image){
-//     $.ajax({
-//         type:'GET',
-//         url:"{% url 'generate_adjusted_image' %}",
-//         data: {"img": input_image},
-//         contentType: false,
-//         processData: false,
-//         success:function (r) {
-//             console.log(r);
-//         },
-//         error: function(r){
-//             console.log(r);
-//         }
-//     })
-// }
-
 function resize_image(event, image_to_resize, resize_width){
     let canvas = document.createElement("canvas");
     let ratio = resize_width / event.target.width;
