@@ -1,0 +1,71 @@
+.enter {
+    border: 5px solid black;
+}
+
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+
+.fadebutton:hover + .hide {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+.nextbutton:hover + .hide {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+
+
+.pill {
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 16px;
+    border: 5px solid black;
+}
+
+.button {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+
+.nextbutton {
+    background-color: #D9D9D9; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input {
+    max-width: 80%;
+}
+
+.rectangle {
+    border-radius: 25px;
+    background: #D9D9D9;
+    padding: 20px;
+    width: 80vh;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    border: 5px solid black;
+}
