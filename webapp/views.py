@@ -46,20 +46,14 @@ def login(request):
 def upload_image_render(request):
     processed_image=0
     image = ""
-    dummy=0
+    image_to_display=0
 
 
     if request.method == "POST":
         data = request.POST
         image = request.FILES['image']
 
-        # print('image:', image)
-        print(type(image))
-        # print("path: ", image.temporary_file_path())
-        
         Upload_Image.objects.create(image=image)
-        # print(type(Image.open(BytesIO(request.FILES['image'].read()))))
-        # pillow_image = remove_background(Image.open(BytesIO(image.read())))
 
         processed_image = remove(Image.open(BytesIO(image.read())))
         buffer = BytesIO()
@@ -67,19 +61,12 @@ def upload_image_render(request):
         image_file = InMemoryUploadedFile(buffer, None, 'dummy.png', 'image/png', buffer.getbuffer().nbytes, None)
         Processed_Image.objects.create(save_image= image_file)
 
-
-        # image_field.save('dummy.png', InMemoryUploadedFile(pillow_image, None, 'dummy.png', 'image/png', pillow_image.tell, None))
-        # processed_image.show()
+        image_to_display = Processed_Image.objects.last()
 
         return redirect('../upload_image/')
 
+    context = {"image": image_to_display}
 
-        # save_processed_image(processed_image_file.file)
-        # print(type(processed_image_file))
-
-
-
-    context = {"processed_image": processed_image}
 
     return render(request, 'upload_image.html', context)
 
