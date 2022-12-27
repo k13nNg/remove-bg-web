@@ -2,7 +2,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from django.http import JsonResponse
-from .models import Upload_Image
+from django.core.files.uploadedfile import InMemoryUploadedFile, TemporaryUploadedFile
+from .models import Upload_Image, Processed_Image
+from rembg import remove
+from PIL import Image
+from io import BytesIO
+from django.core.files.base import ContentFile
 
 # import the AI model
 #from rembg import remove
@@ -30,15 +35,53 @@ def signup(request):
 def login(request):
     return render(request, 'login.html')
 
+# def remove_background(image):
+#     processed_image=remove(image)
+#     # processed_image.show()
+#     buffer = BytesIO()
+#     processed_image.save(fp=buffer, format='PNG')
+#     return ContentFile(buffer.getvalue())
+
 
 def upload_image_render(request):
+    processed_image=0
+    image = ""
+    dummy=0
+
+
     if request.method == "POST":
         data = request.POST
-        image = request.FILES.get('image')
+        image = request.FILES['image']
 
-        upload_image = Upload_Image.objects.create(image=image)
+        # print('image:', image)
+        print(type(image))
+        # print("path: ", image.temporary_file_path())
+        
+        Upload_Image.objects.create(image=image)
+        # print(type(Image.open(BytesIO(request.FILES['image'].read()))))
+        # pillow_image = remove_background(Image.open(BytesIO(image.read())))
 
-    return render(request, 'upload_image.html')
+        processed_image = remove(Image.open(BytesIO(image.read())))
+        buffer = BytesIO()
+        processed_image.save(buffer, format='PNG')
+        image_file = InMemoryUploadedFile(buffer, None, 'dummy.png', 'image/png', buffer.getbuffer().nbytes, None)
+        Processed_Image.objects.create(save_image= image_file)
+
+
+        # image_field.save('dummy.png', InMemoryUploadedFile(pillow_image, None, 'dummy.png', 'image/png', pillow_image.tell, None))
+        # processed_image.show()
+
+        return redirect('../upload_image/')
+
+
+        # save_processed_image(processed_image_file.file)
+        # print(type(processed_image_file))
+
+
+
+    context = {"processed_image": processed_image}
+
+    return render(request, 'upload_image.html', context)
 
 
 def about_render(request):
