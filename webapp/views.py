@@ -9,16 +9,6 @@ from PIL import Image
 from io import BytesIO
 from django.core.files.base import ContentFile
 
-# import the AI model
-#from rembg import remove
-#from PIL import Image
-
-# Create your views here.
-# view functions are functions that takes a request and
-# returns a response
-
-# view functions are also called request handler
-
 
 def main_render(request):
     return render(request, 'index.html')
@@ -35,19 +25,17 @@ def signup(request):
 def login(request):
     return render(request, 'login.html')
 
-# def remove_background(image):
-#     processed_image=remove(image)
-#     # processed_image.show()
-#     buffer = BytesIO()
-#     processed_image.save(fp=buffer, format='PNG')
-#     return ContentFile(buffer.getvalue())
+def view_image(request):
+    img = Processed_Image.objects.last()
 
+    context = {'img_to_display': img}
+
+    return render(request, 'view_image.html', context)
 
 def upload_image_render(request):
     processed_image=0
     image = ""
     image_to_display=0
-
 
     if request.method == "POST":
         data = request.POST
@@ -63,12 +51,9 @@ def upload_image_render(request):
 
         image_to_display = Processed_Image.objects.last()
 
-        return redirect('../upload_image/')
+        return redirect('../view_image/')
 
-    context = {"image": image_to_display}
-
-
-    return render(request, 'upload_image.html', context)
+    return render(request, 'upload_image.html')
 
 
 def about_render(request):
