@@ -1,22 +1,24 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block navbar %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>remove-bg</title>
+        <link rel="shortcut icon" type="image/svg" href="{% static '/images/logo.svg' %}">
+        <link rel="stylesheet" href="{% static 'styles/navbar.css' %}"/>
+        <link rel="stylesheet" href="{% static '/styles/upload_image_style.css' %}">
+        <script src="{% static '/js/jquery-3.6.3.js' %}"></script>
 
-{%load static%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>remove-bg</title>
-    <link rel="shortcut icon" type="image/svg" href="{% static '/images/logo.svg' %}">
-    <link rel="stylesheet" href="{% static '/styles/upload_image_style.css'%}">
-    <script src="{% static '/js/jquery-3.6.3.js' %}"></script>
-    
-</head>
+    </head>
 
-<body>
+    <body>
 
     <h1 class="heading">Upload your image</h1>
-    
+
     <div class="image-holder" id="display-image">
         <!-- <img class= "image_thumbnail" src="{{image.img.url}}" alt="image"> -->
     </div>
@@ -25,25 +27,25 @@
     <form method="POST" action="" enctype="multipart/form-data">
         {% csrf_token %}
 
-        <input name="image" id="input" hidden="hidden" type = "file" accept="image/png, image/jpeg">
-        
+        <input name="image" id="input" hidden="hidden" type="file" accept="image/png, image/jpeg">
+
         <button type="button" id="upload-button" class="button upload-btn">
-            <img src="{% static '/images/cloud-upload.svg'%}" />  
+            <img src="{% static '/images/cloud-upload.svg' %}"/>
             <span>Upload your image</span>
         </button>
-        
 
-        <div id = "btn-container" class = "after-upload">
+
+        <div id="btn-container" class="after-upload">
             <button type="button" id="chooseAnother-button" class="button upload-btn">
-                <img src="{% static '/images/cloud-upload.svg'%}" />  
+                <img src="{% static '/images/cloud-upload.svg' %}"/>
                 <span>Choose another image</span>
             </button>
-            
-            <button type="submit" id = "convert-button" class="button convert-btn">
-                <img src="{% static 'images/convert.svg'%}" />
+
+            <button type="submit" id="convert-button" class="button convert-btn">
+                <img src="{% static 'images/convert.svg' %}"/>
                 <span>Convert your image</span>
             </button>
-            
+
 
         </div>
     </form>
@@ -51,9 +53,8 @@
     <!-- <img src="{{image.image_to_display.url}}" alt=""> -->
 
 
-    
+    </body>
 
-</body>
-
-<script src="{% static '/js/upload_image.js' %}"></script>
-</html>
+    <script src="{% static '/js/upload_image.js' %}"></script>
+    </html>
+{% endblock %}
