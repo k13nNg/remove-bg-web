@@ -52,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'django_project_webapp.urls'
+LOGIN_REDIRECT_URL = "/"
 
 TEMPLATES = [
     {
