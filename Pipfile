@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
+rembg = "*"
 
 [dev-packages]
 autopep8 = "*"

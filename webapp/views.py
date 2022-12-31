@@ -59,6 +59,9 @@ def upload_image_render(request):
 def about_render(request):
     return render(request, 'about.html')
 
+def gallery(request):
+    return render(request, "gallery.html")
+
         
     
 

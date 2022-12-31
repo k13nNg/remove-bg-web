@@ -27,15 +27,16 @@
 <div class="h-100 d-flex align-self-center justify-content-center">
     <div style="width: 10vh"></div>
     <div class="rectangle">
-        <div class="h-100 d-flex flex-column align-items-center justify-content-center">
+        <form method="post" action="{% url 'login' %}" class="h-100 d-flex flex-column align-items-center justify-content-center" >
             <img src="{% static 'images\logo.svg' %}" alt="Logo"/>
-            <input type="text" class="enter pill" placeholder="email" id="fname" name="fname">
-            <input type="text" class="enter pill" placeholder="password" id="fname" name="fname">
-            <a href="https://r.mtdv.me/remove-bg-web" target="_blank" rel="noopener noreferrer">
-                <!-- Note: Implement Backend or MVC Framework as Needed -->
-                <button class="button pill">Log In</button>
-            </a>
-        </div>
+                {% csrf_token %}
+                <input type="text" class="enter pill" placeholder="username" id="fname" name="username">
+                <input type="password" placeholder="password" name="password" autocomplete="current-password" required="" id="id_password" class="enter pill">
+                <a href="https://r.mtdv.me/remove-bg-web" target="_blank" rel="noopener noreferrer">
+                    <button class="button pill" type="submit" value="login">Login</button>
+                </a>
+                <input type="hidden" name="next" value="{{ next }}">
+            </form>
     </div>
     <div style="width: 10vh"></div>
 
