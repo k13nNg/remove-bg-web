@@ -54,6 +54,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'django_project_webapp.urls'
 LOGIN_REDIRECT_URL = "/webapp/gallery"
+LOGOUT_REDIRECT_URL = "/webapp/index" 
 
 TEMPLATES = [
     {

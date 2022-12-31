@@ -56,7 +56,10 @@ def about_render(request):
     return render(request, 'about.html')
 
 def gallery(request):
-    images = request.user.processed_image_set.all()
+    images = None
+    if request.user.is_authenticated:
+        images = request.user.processed_image_set.all()
+        
     context = {'images': images}
     return render(request, "gallery.html", context)
 
