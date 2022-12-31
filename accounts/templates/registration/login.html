@@ -32,9 +32,7 @@
                 {% csrf_token %}
                 <input type="text" class="enter pill" placeholder="username" id="fname" name="username">
                 <input type="password" placeholder="password" name="password" autocomplete="current-password" required="" id="id_password" class="enter pill">
-                <a href="https://r.mtdv.me/remove-bg-web" target="_blank" rel="noopener noreferrer">
-                    <button class="button pill" type="submit" value="login">Login</button>
-                </a>
+                <button class="button pill" type="submit" value="login">Login</button>
                 <input type="hidden" name="next" value="{{ next }}">
             </form>
     </div>
@@ -59,3 +57,9 @@
 
 </body>
 </html>
+
+{% block content %}
+{% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+{% endblock %}

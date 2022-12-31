@@ -1,3 +1,4 @@
+<!-- templates/registration/signup.html -->
 {% load static %}
 
 <!DOCTYPE html>
@@ -45,15 +46,13 @@
     <div style="width: 20vh"></div>
 
     <div class="rectangle">
-        <div class="h-100 d-flex flex-column align-items-center justify-content-center">
+        <form method="post" class="h-100 d-flex flex-column align-items-center justify-content-center">
+            {% csrf_token %}
             <img src="{% static 'images\logo.svg' %}" alt="Logo"/>
-            <input type="text" class="enter pill" placeholder="email" id="fname" name="fname">
-            <input type="text" class="enter pill" placeholder="password" id="fname" name="fname">
-            <input type="text" class="enter pill" placeholder="confirm password" id="fname" name="fname">
-            <a href="https://r.mtdv.me/remove-bg-web" target="_blank" rel="noopener noreferrer">
-                <!-- Note: Implement Backend or MVC Framework as Needed -->
-                <button class="button pill">Sign Up</button>
-            </a>
+            <input type="text" class="enter pill" placeholder="username" id="fname" name="username" required>
+            <input type="password" class="enter pill" placeholder="password" id="fname" name="password1" required>
+            <input type="password" class="enter pill" placeholder="confirm password" name="password2" required>
+            <button type="submit" class="button pill">Sign Up</button>
         </div>
     </div>
 

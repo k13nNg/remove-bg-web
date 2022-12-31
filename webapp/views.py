@@ -18,13 +18,6 @@ def navbar_render(request):
     navbar = loader.get_template('navbar.html')
     return HttpResponse(navbar.render())
 
-
-def signup(request):
-    return render(request, 'signup.html')
-
-def login(request):
-    return render(request, 'login.html')
-
 def view_image(request):
     img = Processed_Image.objects.last()
 
