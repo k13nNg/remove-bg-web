@@ -33,6 +33,9 @@ def upload_image_render(request):
     if request.method == "POST":
         data = request.POST
         image = request.FILES['image']
+        user = request.user
+        if not user.is_authenticated:
+            user = None
 
         Upload_Image.objects.create(image=image)
 
@@ -40,7 +43,7 @@ def upload_image_render(request):
         buffer = BytesIO()
         processed_image.save(buffer, format='PNG')
         image_file = InMemoryUploadedFile(buffer, None, 'dummy.png', 'image/png', buffer.getbuffer().nbytes, None)
-        Processed_Image.objects.create(save_image= image_file)
+        Processed_Image.objects.create(save_image= image_file, user = user)
 
         image_to_display = Processed_Image.objects.last()
 
@@ -53,7 +56,9 @@ def about_render(request):
     return render(request, 'about.html')
 
 def gallery(request):
-    return render(request, "gallery.html")
+    images = request.user.processed_image_set.all()
+    context = {'images': images}
+    return render(request, "gallery.html", context)
 
         
     

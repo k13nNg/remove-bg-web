@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from PIL import Image
 
 # Create your models here.
@@ -8,6 +9,7 @@ class Upload_Image(models.Model):
 
 class Processed_Image(models.Model):
     save_image = models.ImageField(null=False, blank=False, upload_to="processed_images")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
