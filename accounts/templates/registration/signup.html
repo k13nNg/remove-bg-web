@@ -48,6 +48,7 @@
     <div class="rectangle">
         <form method="post" class="h-100 d-flex flex-column align-items-center justify-content-center">
             {% csrf_token %}
+            {{ register_form }}
             <img src="{% static 'images\logo.svg' %}" alt="Logo"/>
             <input type="text" class="enter pill" placeholder="username" id="fname" name="username" required>
             <input type="password" class="enter pill" placeholder="password" id="fname" name="password1" required>
@@ -60,3 +61,16 @@
 
 </body>
 </html>
+
+{% block content %}
+{% if form.errors %}
+  <p>Signup unsuccessful </p>
+  <ul>
+    {% for k, v in form.errors.items %}
+      {% for s in v %}
+        <li>{{s}}</li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endblock %}
