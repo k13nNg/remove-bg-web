@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-p!z(uq$ebv8=f8t0-e)p=)f+$$+5v6yf0dl9_+$_t55tv#pktf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8020','http://localhost:8020']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
 
 
 # Application definition
@@ -133,3 +135,4 @@ MEDIA_ROOT = BASE_DIR / 'webapp/static/upload_images'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
