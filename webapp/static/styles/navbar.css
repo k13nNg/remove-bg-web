@@ -26,6 +26,14 @@ li {
     background-color: #BDC4C8;
 }
 
+#main{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+}
+
 .menu {
     display: flex;
     font-size: 25px;
