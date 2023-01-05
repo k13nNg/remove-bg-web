@@ -28,7 +28,7 @@
   {{ user.email }}
   <ul>
     {% for image in images %}
-      <li>{{ image.user }} 
+      <li>
           <img src="{{ image.save_image.url }}">
       </li>
     {% endfor %}
