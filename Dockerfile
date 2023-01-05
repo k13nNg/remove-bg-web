@@ -8,9 +8,8 @@ COPY nginx.default /etc/nginx/sites-available/default
 
 # copy source to /opt/app 
 WORKDIR /opt/app 
-RUN mkdir ./pip_cache
 COPY . ./ 
-RUN pip3 install -r requirements.txt --cache-dir ./pip_cache 
+RUN mkdir ./pip_cache; pip3 install -r requirements.txt --cache-dir ./pip_cache 
 RUN chown -R www-data:www-data /opt/app; chmod 777 -R /root
 
 ENV NUMBA_CACHE_DIR="/tmp"
