@@ -14,9 +14,7 @@ and navigate to [http://127.0.0.1:8000/webapp/index](http://127.0.0.1:8000/webap
 
 ## Docker Notes
 To run it in docker, set the proper environment variables in `/env` and run 
-`IMAGE=imagename &&
-docker run --env-file env $IMAGE sh -c "python manage.py makemigrations && python manage.py migrate" &&
-docker run --env-file env -p 80:8020 $IMAGE`
+`docker run --env-file env -p 80:8020 garendaxe/rembgweb`
 
 
 
