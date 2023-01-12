@@ -42,6 +42,11 @@
     width: 30px;
 }
 
+.image-thumbnail{
+    width:400px;
+    height:400px;
+}
+
 /* Mobile devices */
 @media screen and (min-width: 320px) and (max-width: 480px){
     /* .image-holder{

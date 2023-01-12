@@ -5,10 +5,10 @@ from . import views
 
 # URLConf
 urlpatterns = [
-    path('upload_image/', views.upload_image_render, name='upload'),
+    path('upload_image/', views.upload_image_render),
     path('index/', views.main_render, name="index"),  # default page
     path('about/', views.about_render, name="about"),
     path('view_image/', views.view_image),
-    path('gallery/', views.gallery, name='gallery')
+    path('gallery/', views.gallery)
 ]
 
